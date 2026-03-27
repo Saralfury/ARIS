@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --surface: #0c0e12;
+  --surface-container-lowest: #000000;
+  --surface-container-low: #111318;
+  --surface-container-high: #1d2025;
+  --surface-container-highest: #23262c;
+  --surface-variant: rgba(35, 38, 44, 0.6);
+  --primary: #a1faff;
+  --primary-container: #00f4fe;
+  --primary-dim: #00e5ee;
+  --secondary: #00ffab;
+  --secondary-container: #006c46;
+  --on-surface: #f6f6fc;
+  --on-surface-variant: #aaabb0;
+  --outline-variant: rgba(70, 72, 77, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .display-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+.glass-panel {
+  background-color: var(--surface-variant);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--outline-variant);
+  border-radius: 8px;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: #006165;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.primary-btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 10px rgba(161, 250, 255, 0.5);
+}
+
+.answer-panel {
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  width: 420px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 16px;
+  border-left: 3px solid var(--primary);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--on-surface);
+  background-color: var(--surface-container-high);
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+  color: var(--primary);
+}
+
+.loading-indicator {
+  font-family: monospace;
+  color: var(--secondary);
+  font-size: 13px;
+  padding: 8px 0;
+}
