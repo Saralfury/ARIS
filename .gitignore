@@ -1,5 +1,11 @@
-﻿**/target/
-**/node_modules/
 .env
-*_cache.json
-**/*.exe
+.env.local
+target/
+Cargo.lock
+node_modules/
+dist/
+.vscode/
+.idea/
+.cursor/
+.agent/
+.DS_Store
